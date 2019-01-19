@@ -21,7 +21,7 @@ SDL2_CONF_OPTS += \
 	--disable-video-wayland
 
 # We must enable static build to get compilation successful.
-SDL2_CONF_OPTS += --enable-static
+#SDL2_CONF_OPTS += --enable-static
 
 ifeq ($(BR2_PACKAGE_HAS_UDEV),y)
 SDL2_DEPENDENCIES += udev

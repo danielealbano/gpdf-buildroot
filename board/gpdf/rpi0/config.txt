@@ -1,0 +1,25 @@
+disable_overscan=1
+hdmi_cvt=1024 600 60 3 0 0 0
+
+## max_usb_current
+##     When set to 1, change the output current limit (for all 4 USB
+##     ports combined) from 600mA to double that, 1200mA.
+##
+##     This option is not available for Model A/B boards.
+##
+##     Default 0.
+##
+#max_usb_current=0
+
+#dtparam=i2c_arm=off
+#dtparam=spi=off
+#dtparam=random=off
+#dtparam=uart0=on
+#dtparam=watchdog=off
+#dtparam=act_led_trigger=mmc
+#dtparam=act_led_activelow=off
+#dtparam=act_led_gpio=47
+#dtparam=pwr_led_activelow=off
+#dtparam=pwr_led_gpio=35
+
+enable_uart=1
