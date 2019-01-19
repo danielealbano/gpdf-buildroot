@@ -959,6 +959,9 @@ F:	package/angularjs/
 N:	Ilias Apalodimas <apalos@gmail.com>
 F:	package/keepalived/
 
+N:	Ilya Averyanov <averyanovin@gmail.com>
+F:	package/exempi/
+
 N:	Ismael Luceno <ismael@iodev.co.uk>
 F:	package/axel/
 
@@ -1000,6 +1003,8 @@ F:	configs/pine64_defconfig
 F:	configs/pine64_sopine_defconfig
 
 N:	James Hilliard <james.hilliard1@gmail.com>
+F:	package/lua-std-debug/
+F:	package/lua-std-normalize/
 F:	package/python-aiodns/
 F:	package/python-aiohttp/
 F:	package/python-aiohttp-jinja2/
@@ -1346,8 +1351,10 @@ F:	package/ratpoison/
 N:	Mark Corbin <mark.corbin@embecosm.com>
 F:	arch/arch.mk.riscv
 F:	arch/Config.in.riscv
+F:	board/qemu/riscv32-virt/
 F:	board/qemu/riscv64-virt/
 F:	boot/riscv-pk/
+F:	configs/qemu_riscv32_virt_defconfig
 F:	configs/qemu_riscv64_virt_defconfig
 
 N:	Markos Chandras <markos.chandras@imgtec.com>
@@ -1418,6 +1425,7 @@ F:	package/kvm-unit-tests/
 F:	package/kvmtool/
 F:	package/libcsv/
 F:	package/libcurl/
+F:	package/libeastl/
 F:	package/libfcgi/
 F:	package/libopenssl/
 F:	package/libselinux/
@@ -1641,6 +1649,7 @@ F:	board/openblocks/a6/
 F:	board/orangepi/
 F:	board/pandaboard/
 F:	board/roseapplepi/
+F:	boot/shim/
 F:	configs/minnowboard_max-graphical_defconfig
 F:	configs/minnowboard_max_defconfig
 F:	configs/nexbox_a95x_defconfig
@@ -1902,13 +1911,6 @@ N:	Scott Fan <fancp2007@gmail.com>
 F:	package/libssh/
 F:	package/x11r7/xdriver_xf86-video-fbturbo/
 
-N:	Sebastien Bourdelin <sebastien.bourdelin@savoirfairelinux.com>
-F:	package/atf/
-F:	package/cppunit/
-F:	package/kyua/
-F:	package/lutok/
-F:	package/yaml-cpp/
-
 N:	Sébastien Szymanski <sebastien.szymanski@armadeus.com>
 F:	package/mmc-utils/
 F:	package/python-flask-jsonrpc/
@@ -2075,6 +2077,7 @@ F:	package/perl-net-snmp/
 F:	package/perl-net-ssh2/
 F:	package/perl-net-telnet/
 F:	package/pigz/
+F:	package/xenomai/
 F:	support/scripts/size-stats
 F:	utils/size-stats-compare
 F:	toolchain/
@@ -2127,6 +2130,7 @@ F:	package/python-serial/
 F:	package/qextserialport/
 F:	package/rpcbind/
 F:	package/rt-tests/
+F:	package/rtc-tools/
 F:	package/sam-ba/
 F:	package/scons/
 F:	package/squashfs/
