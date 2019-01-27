@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_PYSDL2
+	bool "python-pysdl2"
+	depends on BR2_PACKAGE_PYTHON3
+	help
+	  Pure Python interface for PySDL2
