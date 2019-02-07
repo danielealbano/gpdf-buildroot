@@ -17,6 +17,7 @@ DIRECTFB_CONF_OPTS = \
 	--enable-zlib \
 	--enable-freetype \
 	--enable-fbdev \
+    --enable-egl \
 	--disable-sdl \
 	--disable-vnc \
 	--disable-osx \
@@ -65,7 +66,21 @@ else
 DIRECTFB_CONF_OPTS += --disable-sawman
 endif
 
+ifeq ($(BR2_PACKAGE_DIRECTFB_MESA),y)
+DIRECTFB_CONF_OPTS += --enable-mesa
+else
+DIRECTFB_CONF_OPTS += --disable-mesa
+endif
+
+ifeq ($(BR2_PACKAGE_DIRECTFB_DRMKMS),y)
+DIRECTFB_CONF_OPTS += --enable-drmkms
+else
+DIRECTFB_CONF_OPTS += --disable-drmkms
+endif
+
 DIRECTFB_GFX = \
+	$(if $(BR2_PACKAGE_DIRECTFB_GL),gl) \
+	$(if $(BR2_PACKAGE_DIRECTFB_GLES2),gles2) \
 	$(if $(BR2_PACKAGE_DIRECTFB_ATI128),ati128) \
 	$(if $(BR2_PACKAGE_DIRECTFB_CYBER5K),cyber5k) \
 	$(if $(BR2_PACKAGE_DIRECTFB_MATROX),matrox) \

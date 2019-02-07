@@ -66,9 +66,25 @@ config BR2_PACKAGE_DIRECTFB_SAWMAN
 	help
 	  Enable the SawMan feature (window manager)
 
-config BR2_PACKAGE_DIRECTFB_ATI128
-	bool "compile ati128 graphics driver"
-	depends on BR2_i386 || BR2_x86_64
+config BR2_PACKAGE_DIRECTFB_DRMKMS
+        bool "drm/kms"
+        help
+          Enable the DRM/KMS support
+
+config BR2_PACKAGE_DIRECTFB_MESA
+        bool "mesa"
+        depends on BR2_PACKAGE_MESA3D
+        help
+          Enable the Mesa support
+
+comment "mesa support needs the mesa3d package"
+	depends on !BR2_PACKAGE_MESA3D
+
+config BR2_PACKAGE_DIRECTFB_GL
+	bool "compile gl graphics driver"
+
+config BR2_PACKAGE_DIRECTFB_GLES2
+	bool "compile gles2 graphics driver"
 
 config BR2_PACKAGE_DIRECTFB_MATROX
 	bool "compile matrox graphics driver"
