@@ -62,9 +62,10 @@ config BR2_PACKAGE_RPI_FIRMWARE_INSTALL_DTBS
 
 config BR2_PACKAGE_RPI_FIRMWARE_INSTALL_DTB_OVERLAYS
 	bool "Install DTB overlays"
+	depends on (BR2_PACKAGE_RPI_FIRMWARE_INSTALL_DTBS \
+		|| BR2_LINUX_KERNEL_DTS_SUPPORT) && \
+		!BR2_LINUX_KERNEL_DTS_OVERLAYS_SUPPORT
 	default y
-	depends on BR2_PACKAGE_RPI_FIRMWARE_INSTALL_DTBS \
-		|| BR2_LINUX_KERNEL_DTS_SUPPORT
 	help
 	  Say 'y' here if you need to load one or more of the DTB
 	  overlays, to support HATs (Hardware Attached on Top, add-on
@@ -77,7 +78,8 @@ config BR2_PACKAGE_RPI_FIRMWARE_INSTALL_VCDBG
 	depends on BR2_INSTALL_LIBSTDCPP # rpi-userland
 	select BR2_PACKAGE_RPI_USERLAND
 	help
-	  Install vcdbg, to help debug communication with the GPU.
+	  Install vcdbg and vcgencmd to help debug configuration and
+	  communication with the GPU.
 
 comment "vcdbg needs a glibc toolchain w/ C++"
 	depends on BR2_arm

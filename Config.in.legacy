@@ -146,6 +146,79 @@ endif
 
 comment "Legacy options removed in 2019.02"
 
+config BR2_PACKAGE_QT
+	bool "qt package removed"
+	select BR2_LEGACY
+	help
+	  The qt package was removed.
+
+config BR2_PACKAGE_QTUIO
+	bool "qtuio package removed"
+	select BR2_LEGACY
+	help
+	  The qtuio package was removed.
+
+config BR2_PACKAGE_PINENTRY_QT4
+	bool "pinentry-qt4 option removed"
+	select BR2_LEGACY
+	help
+	  The pinentry-qt4 option was removed.
+
+config BR2_PACKAGE_POPPLER_QT
+	bool "poppler qt option removed"
+	select BR2_LEGACY
+	help
+	  The poppler qt option was removed.
+
+config BR2_PACKAGE_OPENCV3_WITH_QT
+	bool "opencv3 qt backend option removed"
+	select BR2_LEGACY
+	help
+	  The opencv3 qt backend option was removed.
+
+config BR2_PACKAGE_OPENCV_WITH_QT
+	bool "opencv qt backend option removed"
+	select BR2_LEGACY
+	help
+	  The opencv qt backend option was removed.
+
+config BR2_PACKAGE_AMD_CATALYST_CCCLE
+	bool "catalyst control center option removed"
+	select BR2_LEGACY
+	help
+	  The AMD Catalyst Control Center option was removed.
+
+config BR2_PACKAGE_SDL_QTOPIA
+	bool "sdl qtopia video driver option removed"
+	select BR2_LEGACY
+	help
+	  The SDL QTopia video driver option was removed.
+
+config BR2_PACKAGE_PYTHON_PYQT
+	bool "python-pyqt package removed"
+	select BR2_LEGACY
+	help
+	  The python-pyqt package was removed. Consider python-pyqt5
+	  instead.
+
+config BR2_PACKAGE_GNURADIO_QTGUI
+	bool "gnuradio gr-qtgui option removed"
+	select BR2_LEGACY
+	help
+	  The gr-qtgui option was removed.
+
+config BR2_PACKAGE_LUACRYPTO
+	bool "luacrypto package removed"
+	select BR2_LEGACY
+	help
+	  The luacrypto package was removed. Consider luaossl instead.
+
+config BR2_PACKAGE_TN5250
+	bool "tn5250 package removed"
+	select BR2_LEGACY
+	help
+	  The tn5250 package was removed.
+
 config BR2_PACKAGE_BOOST_SIGNALS
 	bool "Boost signals removed"
 	select BR2_LEGACY
@@ -153,6 +226,41 @@ config BR2_PACKAGE_BOOST_SIGNALS
 	  Its removal was announced in boost 1.68 and its deprecation
 	  was announced in 1.54. Users are encouraged to use Signals2
 	  instead.
+
+config BR2_PACKAGE_FFTW_PRECISION_SINGLE
+	bool "single"
+	select BR2_LEGACY
+	select BR2_PACKAGE_FFTW_SINGLE
+	help
+	  This option has been removed in favor of
+	  BR2_PACKAGE_FFTW_SINGLE.
+
+config BR2_PACKAGE_FFTW_PRECISION_DOUBLE
+	bool "double"
+	select BR2_LEGACY
+	select BR2_PACKAGE_FFTW_DOUBLE
+	help
+	  This option has been removed in favor of
+	  BR2_PACKAGE_FFTW_DOUBLE.
+
+config BR2_PACKAGE_FFTW_PRECISION_LONG_DOUBLE
+	bool "long double"
+	depends on !(BR2_TOOLCHAIN_BUILDROOT_UCLIBC && \
+		(BR2_arm || BR2_mips || BR2_mipsel))
+	select BR2_LEGACY
+	select BR2_PACKAGE_FFTW_LONG_DOUBLE
+	help
+	  This option has been removed in favor of
+	  BR2_PACKAGE_FFTW_LONG_DOUBLE.
+
+config BR2_PACKAGE_FFTW_PRECISION_QUAD
+	bool "quad"
+	depends on (BR2_i386 || BR2_x86_64) && BR2_USE_WCHAR
+	select BR2_LEGACY
+	select BR2_PACKAGE_FFTW_QUAD
+	help
+	  This option has been removed in favor of
+	  BR2_PACKAGE_FFTW_QUAD.
 
 config BR2_PACKAGE_LUA_5_2
 	bool "Lua 5.2.x version removed"

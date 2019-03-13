@@ -35,7 +35,7 @@ config BR2_LINUX_KERNEL_LATEST_VERSION
 	bool "Latest version (4.19)"
 
 config BR2_LINUX_KERNEL_LATEST_CIP_VERSION
-	bool "Latest CIP SLTS version (v4.4.154-cip28)"
+	bool "Latest CIP SLTS version (v4.4.171-cip30)"
 	help
 	  CIP launched in the spring of 2016 to address the needs of
 	  organizations in industries such as power generation and
@@ -122,8 +122,8 @@ endif
 
 config BR2_LINUX_KERNEL_VERSION
 	string
-	default "4.19.16" if BR2_LINUX_KERNEL_LATEST_VERSION
-	default "v4.4.154-cip28" if BR2_LINUX_KERNEL_LATEST_CIP_VERSION
+	default "4.19.25" if BR2_LINUX_KERNEL_LATEST_VERSION
+	default "v4.4.171-cip30" if BR2_LINUX_KERNEL_LATEST_CIP_VERSION
 	default BR2_LINUX_KERNEL_CUSTOM_VERSION_VALUE \
 		if BR2_LINUX_KERNEL_CUSTOM_VERSION
 	default "custom" if BR2_LINUX_KERNEL_CUSTOM_TARBALL
@@ -394,7 +394,22 @@ config BR2_LINUX_KERNEL_CUSTOM_DTS_PATH
 	  You can provide a list of dts paths to copy and
 	  build, separated by spaces.
 
+config BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT
+	bool "Build Device Tree with overlay support"
+	help
+	  If enabled, pass the "-@" option to dtc, such that
+	  symbols are generated in the compiled Device Tree.
+	  Choose this option to support Device Tree overlays
+	  on the target system.
+
 endif
+
+config BR2_LINUX_KERNEL_DTS_OVERLAYS_SUPPORT
+	bool "Build Device Tree Overlays"
+	depends on BR2_LINUX_KERNEL_DTS_SUPPORT
+	help
+	  Build in-tree device tree overlays.
+	  Currently supports Raspberry Pi kernels.
 
 config BR2_LINUX_KERNEL_INSTALL_TARGET
 	bool "Install kernel image to /boot in target"
