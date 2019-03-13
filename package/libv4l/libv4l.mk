@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBV4L_VERSION = 1.16.2
+LIBV4L_VERSION = 1.16.3
 LIBV4L_SOURCE = v4l-utils-$(LIBV4L_VERSION).tar.bz2
 LIBV4L_SITE = https://linuxtv.org/downloads/v4l-utils
 LIBV4L_INSTALL_STAGING = YES
@@ -73,9 +73,6 @@ LIBV4L_CONF_ENV += \
 ifeq ($(BR2_PACKAGE_QT5_VERSION_LATEST),y)
 LIBV4L_CONF_ENV += CXXFLAGS="$(TARGET_CXXFLAGS) -std=c++11"
 endif
-else ifeq ($(BR2_PACKAGE_QT_OPENGL_GL_DESKTOP),y)
-LIBV4L_CONF_OPTS += --enable-qv4l2
-LIBV4L_DEPENDENCIES += qt
 else
 LIBV4L_CONF_OPTS += --disable-qv4l2
 endif
